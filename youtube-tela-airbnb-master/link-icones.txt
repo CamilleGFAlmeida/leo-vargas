@@ -1,0 +1,11 @@
+Ícone preço
+<i class="fa-sharp fa-solid fa-star"></i>
+
+Ícone superhost
+<i class="fa-solid fa-medal"></i>
+
+Ícone compartilhar
+<i class="fa-solid fa-arrow-up-from-bracket fa-sm"></i>
+
+Ícone salvar
+<i class="fa-sharp fa-regular fa-heart fa-sm"></i>

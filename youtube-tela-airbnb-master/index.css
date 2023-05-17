@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #222;
+  background: #fff;
+
+  font-family: Circular;
+}
+
+.container {
+  width: 100%;
+  max-width: 1266px;
+
+  margin: 80px auto 0; /* top / left e right / bottom */
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+
+.information {
+  display: flex; /* por padrão ele é row por isso não precisa de flex-direction */ 
+  justify-content: space-between; /* afasta os elementos pro outro lado da tela */ 
+  align-items: center;
+}
+
+.information_left {
+  display: flex;
+  align-items: center;
+  column-gap: 6px; /* distância entre as colunas */ 
+}
+
+.information_left div {
+  display: flex;
+  align-items: center;
+  column-gap: 6px; /* distância entre os SVG */ 
+
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0,3px;
+}
+
+.information_left div:not(:first-child):before { /* em todas as divs, então todos os elementos tem o simbolo antes / se fosse ::after seria no final */ 
+  /* not(lastchild) - tira o simbolo do ultimo texto */ 
+  content: " ";
+  width: 3px;
+  height: 3px;
+  background: #222;
+  border-radius: 100%;
+}
+
+.information_left div:has(strong, a) { /* seletor em comum para STRONG e A  */ 
+  font-weight: 500;
+}
+
+.information_right {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.information_right button {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  font-size: 16px;
+
+  border: 0;
+  background: transparent;
+}
+
+.information_right button span { /* remove o underline somente do texto */ 
+  text-decoration: underline;
+}
+
+.images {
+  display: grid; /* sistema de grades / tamanho e altura das linhas / largura das colunas */ 
+  gap: 8px; /* column e row */ 
+  grid-template-columns: 2fr 1fr 1fr; /* tamanho de cada coluna por PX ou FR */ 
+  grid-template-rows: 260px 260px;
+
+  margin-top: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.images picture:first-child {
+  grid-row: 1 / 3; 
+}
+
+.images picture {
+  overflow: hidden;
+}
+
+.images picture img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover; /* corta a img para que ela caiba na tela */
+  transition: scale 0.4s;
+}
+/* ------------------------------------------------------------------------------------------*/ 
+
+/* ANIMAÇÃO HOVER NA IMAGEM */
+
+.images picture:hover img {
+  scale: 1.3;
+}
+
