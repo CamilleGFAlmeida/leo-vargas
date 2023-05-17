@@ -1,0 +1,78 @@
+header {
+    display: flex;
+    align-items: center;
+    column-gap: 64px;
+
+    width: 100%;
+    max-width: 1440px; /* máximo de largura do menu */ 
+    padding-top: 24px;
+}
+
+header img {
+    width: 70px;
+    height: auto;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    column-gap: 48px;
+
+    list-style: none; /* remove os bullets da lista */ 
+}
+
+.navigation_link {
+    font-size: 14px; 
+    font-weight: 300;
+    letter-spacing: 2px; 
+    text-transform: uppercase;
+
+    position: relative; /* relativo em relação ao after */ 
+}
+
+.navigation_link:hover { /* mudança de cor no menu */ 
+    color: var(--red);
+}
+
+.navigation_link::after { /* pseudo-classe para criar o risco */
+    content: " ";
+    position: absolute; /* absoluto em relação ao navigation_link */ 
+    left: 0;
+    bottom: -2px; 
+
+    /* barrinha vermelha */
+    width: 60%;
+    height: 1px;
+    background: var(--red); 
+
+    transform: scaleX(0); /* redução de tamanho da barra */ 
+    transform-origin: right;
+    transition: transform 0.4s; 
+}
+
+.navigation_link:hover::after { /* quando ocorrer o hover no link, eu quero que o after faça */ 
+    transform: scaleX(1); /* aumento de tamanho da barra */
+    transform-origin: left; 
+    transition: transform 0.4s; 
+}
+.navigation_social {
+    margin-left: auto; /* joga os itens das redes sociais pra direita */ 
+
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+}
+
+.navigation_social svg {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6; /* tirando a opacidade o ícone fica mais cinza */ 
+
+    transition: all 0.4s; /* animação */ 
+}
+
+.navigation_social svg:hover {
+    opacity: 1; /* opacidade branca ao passar o mouse */ 
+    transform: translateY(-5px); 
+    cursor: pointer; 
+}

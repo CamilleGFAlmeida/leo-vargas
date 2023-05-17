@@ -1,0 +1,25 @@
+#background {
+    position: fixed;
+    inset: 0;
+    z-index: -1; /* texto na frente do vídeo */ /* -1 ou 2 */ 
+    width: 100%;
+    height: 100vh;
+}
+
+#background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#background::after { /* sombra pra cobrir o video */ 
+    content: " ";
+
+    /* ocupam a largura e a altura do elemento pai (#background) */ 
+    width: inherit;
+    height: inherit;
+
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
