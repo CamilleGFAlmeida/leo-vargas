@@ -1,0 +1,19 @@
+.background {
+    z-index: -1; /* joga a imagem pra trás e traz os botões pra frente */
+    position: relative; 
+}
+
+#images {
+    position: absolute;
+    transition: all 0.8s;
+}
+
+#images img {
+    display: block;
+
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* impede a distorção de imagem a varios tipos de tela */
+    object-position: top; /* alinh as imagens sempre ao topo para não cortar a cabeça dos personagens */
+
+}
