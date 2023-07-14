@@ -39,6 +39,7 @@ main div button svg path {
 
   color: transparent;
   font-family: 'Star Guard Italic';
+  padding-right: 10px; 
 }
 
 #member__name.peter {
